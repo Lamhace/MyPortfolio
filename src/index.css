@@ -27,6 +27,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -36,18 +38,12 @@ body {
   font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
+  width: 100%;
 }
 
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 2px;
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
 a {
   color: inherit;
@@ -66,38 +62,31 @@ button {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
 @keyframes slideRight {
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
 }
-
 @keyframes pulse-ring {
   0%   { transform: scale(1); opacity: 0.8; }
   70%  { transform: scale(1.4); opacity: 0; }
   100% { transform: scale(1.4); opacity: 0; }
 }
-
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-12px); }
 }
-
 @keyframes spin-slow {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
-
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
-
 @keyframes grid-move {
   from { transform: translateY(0); }
   to   { transform: translateY(40px); }
@@ -127,7 +116,6 @@ button {
   color: var(--accent);
   margin-bottom: 16px;
 }
-
 .section-label::before {
   content: '';
   display: block;
@@ -152,67 +140,38 @@ button {
   line-height: 1.8;
 }
 
-/* ── Fade-in on scroll (JS-driven) ── */
+/* ── Scroll reveal ── */
 .reveal {
   opacity: 0;
   transform: translateY(32px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  /* IMPORTANT: will-change isolates stacking context so child hover transforms work correctly */
   will-change: opacity, transform;
 }
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
-  /* Once visible, stop will-change to free GPU memory */
   will-change: auto;
 }
 
 /* ══════════════════════════════════════
-   MOBILE RESPONSIVENESS — Global fixes
+   MOBILE RESPONSIVENESS
    ══════════════════════════════════════ */
-
-/* Prevent horizontal scroll on all screens */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-/* Container safe padding on small screens */
 @media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
-
-  .section {
-    padding: 72px 0;
-  }
-
-  .section-title {
-    font-size: clamp(26px, 8vw, 38px);
-  }
-
-  .btn-primary,
-  .btn-ghost {
-    padding: 12px 22px;
-    font-size: 13px;
-  }
+  .container { padding: 0 16px; }
+  .section { padding: 72px 0; }
+  .section-title { font-size: clamp(26px, 8vw, 38px); }
+  .btn-primary, .btn-ghost { padding: 12px 22px; font-size: 13px; }
 }
 
-/* Touch targets — min 44px for all interactive elements */
+/* Safe touch targets — only on specific elements, never globally overriding display */
 @media (max-width: 720px) {
-  button, a {
+  .btn-primary,
+  .btn-ghost,
+  .nav-cta,
+  .project-link,
+  .contact-mailto,
+  .copy-btn,
+  .footer-top {
     min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-
-  /* Exception: inline/decorative links */
-  .nav-drawer-footer a,
-  .social-pill,
-  .project-tag,
-  .tool-chip,
-  .hero-tech-badge,
-  .section-label {
-    min-height: unset;
   }
 }
