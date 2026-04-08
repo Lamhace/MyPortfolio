@@ -6,8 +6,8 @@ const projects = [
     id: 1,
     title: 'HireSpace',
     description:
-      'A platform that connects local workers and employers — making it easier to find the right person for the job or land the right opportunity. Built with React for a seamless experience.',
-    tags: ['React', 'JavaScript', 'CSS'],
+      'A platform that connects local workers and employers — with real-time chat integration so both parties can communicate directly within the app, making hiring faster and more personal.',
+    tags: ['React', 'JavaScript', 'CSS', 'Real-time Chat'],
     live: 'https://hirespace-chi.vercel.app/',
     github: 'https://github.com/lamhace',
     color: '#00ff87',
@@ -15,6 +15,17 @@ const projects = [
   },
   {
     id: 2,
+    title: 'Scissor',
+    description:
+      'A lightning-fast URL shortener that transforms long, unwieldy links into sharp branded URLs — complete with custom aliases, domain selection, and QR code generation. Sign-up required.',
+    tags: ['React', 'TypeScript', 'API', 'Auth'],
+    live: 'https://lamhaceurlscissor.vercel.app/',
+    github: 'https://github.com/lamhace',
+    color: '#7c6ff7',
+    image: '/images/scissor.png',
+  },
+  {
+    id: 3,
     title: 'WeatherGlass',
     description:
       'Search any location worldwide and get real-time weather results plus a beautiful 5-day forecast. Features a glassmorphic UI that adapts to current weather conditions.',
@@ -25,27 +36,15 @@ const projects = [
     image: '/images/weatherglass.png',
   },
   {
-    id: 3,
-    title: 'Coming Soon',
-    description:
-      'A new project currently in development. Stay tuned — something exciting is on the way! Built with React and modern tools.',
-    tags: ['React', 'Next.js', 'TypeScript'],
-    live: '#',
-    github: '#',
-    color: '#a259ff',
-    emoji: '🚀',
-    wip: true,
-  },
-  {
     id: 4,
     title: 'Coming Soon',
     description:
-      'Another project in the pipeline. Check back soon for something great.',
-    tags: ['React', 'Tailwind', 'API'],
+      'A new project currently in development. Stay tuned — something exciting is on the way!',
+    tags: ['React', 'Next.js', 'TypeScript'],
     live: '#',
     github: '#',
     color: '#f59e0b',
-    emoji: '⚡',
+    emoji: '🚀',
     wip: true,
   },
 ];
@@ -85,7 +84,6 @@ export default function Projects() {
               className={`project-card reveal ${p.wip ? 'project-wip' : ''}`}
               style={{ transitionDelay: `${i * 0.1}s`, '--project-color': p.color }}
             >
-              {/* Thumbnail area */}
               <div className="project-thumb">
                 {p.image ? (
                   <img src={p.image} alt={p.title} className="project-screenshot" />
@@ -106,7 +104,7 @@ export default function Projects() {
                 </div>
 
                 <div className="project-links">
-                  {!p.wip && (
+                  {!p.wip && p.live !== '#' && (
                     <a href={p.live} target="_blank" rel="noopener noreferrer" className="project-link primary">
                       Live Demo <ArrowIcon />
                     </a>
