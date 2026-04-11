@@ -39,7 +39,7 @@ export default function About() {
 
             <a
               className="btn-primary about-cta"
-              href="/Ojo_Oladimeji_Resume.pdf"
+              href="/Ojo_Oladimeji_Resume.docx"
               download
               style={{ display: 'inline-block', marginTop: '36px' }}
             >
