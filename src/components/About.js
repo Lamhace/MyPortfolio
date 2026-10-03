@@ -12,6 +12,7 @@ export default function About() {
     <section className="section about" id="about">
       <div className="container">
         <div className="about-inner">
+          {/* Left: text */}
           <div className="about-left reveal">
             <span className="section-label">About Me</span>
             <h2 className="section-title">
@@ -39,7 +40,7 @@ export default function About() {
 
             <a
               className="btn-primary about-cta"
-              href="/Ojo_Oladimeji_Resume.docx"
+              href="/Ojo_Oladimeji_Resume.pdf"
               download
               style={{ display: 'inline-block', marginTop: '36px' }}
             >
@@ -47,35 +48,33 @@ export default function About() {
             </a>
           </div>
 
+          {/* Right: code card */}
           <div className="about-right reveal" style={{ transitionDelay: '0.15s' }}>
             <div className="about-card">
               <div className="about-card-header">
                 <span className="about-card-dot red" />
                 <span className="about-card-dot yellow" />
                 <span className="about-card-dot green" />
+                <span className="about-card-title">developer.js</span>
               </div>
               <pre className="about-code">
 {`// about.js — Ojo Oladimeji
-
 const developer = {
   name: "Ojo Oladimeji",
   role: "Frontend Developer",
   location: "Nigeria 🇳🇬",
   experience: "2 years",
   available: true,
-
   loves: [
     "Clean UI",
     "Smooth animations",
     "React ecosystems",
     "Turning ideas → products",
   ],
-
   currentlyBuilding: [
     "Portfolio v2 (this one!)",
     "2 more secret projects...",
   ],
-
   github: "github.com/lamhace",
   email: "Oladimejiojo93@gmail.com",
 };
