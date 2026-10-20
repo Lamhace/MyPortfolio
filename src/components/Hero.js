@@ -40,7 +40,7 @@ export default function Hero() {
         <div className="hero-text">
           <div className="hero-badge">
             <span className="hero-badge-dot" />
-            Available for freelance &amp; contract work
+            Available for freelance work
           </div>
 
           <h1 className="hero-name">
@@ -54,8 +54,8 @@ export default function Hero() {
           </p>
 
           <p className="hero-description">
-            I craft fast, responsive web applications and AI-leveraged workflows
-            using React, TypeScript, and modern LLM prompt engineering. Let's build something great together.
+            I craft fast, beautiful, and accessible web experiences
+            using React, TypeScript, and modern AI workflows. Let's build something great together.
           </p>
 
           <div className="hero-actions">
@@ -73,7 +73,7 @@ export default function Hero() {
           <div className="hero-stats">
             <div className="hero-stat">
               <span className="stat-num">4+</span>
-              <span className="stat-label">Live Projects</span>
+              <span className="stat-label">Projects Live</span>
             </div>
             <div className="hero-stat-divider" />
             <div className="hero-stat">
@@ -83,45 +83,33 @@ export default function Hero() {
             <div className="hero-stat-divider" />
             <div className="hero-stat">
               <span className="stat-num">100%</span>
-              <span className="stat-label">Dedication</span>
+              <span className="stat-label">Passion</span>
             </div>
           </div>
         </div>
 
-        <div className="hero-visual">
-          <div className="hero-avatar-wrapper">
-            <div className="hero-avatar-ring" />
-            <img
-              src="/images/me.jpg"
-              alt="Ojo Oladimeji"
-              className="hero-avatar-img"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                const fallback = e.currentTarget.parentElement.querySelector('.hero-avatar-fallback');
-                if (fallback) fallback.style.display = 'flex';
-              }}
-            />
-            <div className="hero-avatar-fallback" style={{ display: 'none' }}>
-              <span>OO</span>
+        <div className="hero-visual" aria-hidden="true">
+          <div className="hero-avatar-ring">
+            <div className="hero-avatar-ring-inner" />
+            <div className="hero-avatar">
+              <img src="/images/me.jpg" alt="Ojo Oladimeji" />
             </div>
+            <div className="hero-orbit-dot hero-orbit-dot-1" />
+            <div className="hero-orbit-dot hero-orbit-dot-2" />
+            <div className="hero-orbit-dot hero-orbit-dot-3" />
           </div>
 
-          <div className="hero-float-card hero-float-1">
-            <span className="float-icon">⚡</span>
-            <div>
-              <p className="float-title">Pixel-Perfect</p>
-              <p className="float-sub">Figma to React</p>
-            </div>
-          </div>
-
-          <div className="hero-float-card hero-float-2">
-            <span className="float-icon">🤖</span>
-            <div>
-              <p className="float-title">AI Workflows</p>
-              <p className="float-sub">Prompt Engineering</p>
-            </div>
+          <div className="hero-tech-badges">
+            {['React', 'Next.js', 'TypeScript', 'Tailwind', 'AI & Prompts'].map((t) => (
+              <span key={t} className="hero-tech-badge">{t}</span>
+            ))}
           </div>
         </div>
+      </div>
+
+      <div className="hero-scroll-hint">
+        <div className="hero-scroll-line" />
+        <span>scroll</span>
       </div>
     </section>
   );
