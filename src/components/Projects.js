@@ -8,7 +8,7 @@ const projects = [
     description:
       'Enterprise AI prompt engineering and evaluation suite. Features automated heuristic quality auditing, hallucination guardrails, strict output schemas, and empirical side-by-side battle testing.',
     tags: ['AI / LLMs', 'Prompt Engineering', 'TypeScript', 'React', 'Tailwind CSS'],
-    live: 'https://promptsmith.vercel.app/',
+    live: 'https://github.com/Lamhace/PromptSmith',
     github: 'https://github.com/Lamhace/PromptSmith',
     color: '#10b981',
     image: '/images/promptsmith.svg',
@@ -51,7 +51,7 @@ const projects = [
 function ArrowIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2 12L12 2H5M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -103,7 +103,7 @@ export default function Projects() {
 
                 <div className="project-links">
                   <a href={p.live} target="_blank" rel="noopener noreferrer" className="project-link primary">
-                    Live Demo <ArrowIcon />
+                    {p.id === 1 ? 'Repository' : 'Live Demo'} <ArrowIcon />
                   </a>
                   {p.github && (
                     <a href={p.github} target="_blank" rel="noopener noreferrer" className="project-link secondary">
