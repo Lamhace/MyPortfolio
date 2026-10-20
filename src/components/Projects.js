@@ -4,6 +4,17 @@ import './Projects.css';
 const projects = [
   {
     id: 1,
+    title: 'PromptSmith Studio',
+    description:
+      'Enterprise AI prompt engineering and evaluation suite. Features automated heuristic quality auditing, hallucination guardrails, strict output schemas, and empirical side-by-side battle testing.',
+    tags: ['AI / LLMs', 'Prompt Engineering', 'TypeScript', 'React', 'Tailwind CSS'],
+    live: 'https://promptsmith.vercel.app/',
+    github: 'https://github.com/Lamhace/PromptSmith',
+    color: '#10b981',
+    image: '/images/promptsmith.svg',
+  },
+  {
+    id: 2,
     title: 'HireSpace',
     description:
       'A platform that connects local workers and employers — with real-time chat integration so both parties can communicate directly within the app, making hiring faster and more personal.',
@@ -14,7 +25,7 @@ const projects = [
     image: '/images/hirespace.png',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Scissor',
     description:
       'A lightning-fast URL shortener that transforms long links into branded short URLs — complete with custom aliases, domain selection, and QR code generation. Sign-up required.',
@@ -25,7 +36,7 @@ const projects = [
     image: '/images/scissor.png',
   },
   {
-    id: 3,
+    id: 4,
     title: 'WeatherGlass',
     description:
       'Search any location worldwide and get real-time weather results plus a beautiful 5-day forecast. Features a glassmorphic UI that adapts to current weather conditions.',
@@ -61,7 +72,7 @@ export default function Projects() {
           <span className="section-label">Projects</span>
           <h2 className="section-title">What I've Built</h2>
           <p className="section-sub">
-            A selection of my production work — built with modern frontend architecture and clean code.
+            A selection of my production work — built with modern frontend architecture, AI workflows, and clean code.
           </p>
         </div>
 

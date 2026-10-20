@@ -2,9 +2,9 @@ import React from 'react';
 import './About.css';
 
 const highlights = [
-  { icon: '⚡', label: 'Fast Learner', desc: 'Constantly picking up new tools and frameworks' },
-  { icon: '🎨', label: 'Design-Conscious', desc: 'I care deeply about UI/UX and pixel-perfect detail' },
-  { icon: '🤝', label: 'Collaborative', desc: 'Great communicator who delivers on time' },
+  { icon: '🤖', label: 'AI-Leveraged', desc: 'Expertise in LLM prompt engineering, few-shot prompting, and structured schemas' },
+  { icon: '🎨', label: 'Design-Conscious', desc: 'Deeply care about UI/UX, responsive layouts, and pixel-perfect detail' },
+  { icon: '🤝', label: 'Collaborative & Fast', desc: 'Great communicator who delivers clean, maintainable code on time' },
 ];
 
 export default function About() {
@@ -20,10 +20,10 @@ export default function About() {
               <em className="about-em">Digital Reality</em>
             </h2>
             <p className="section-sub" style={{ marginBottom: '20px' }}>
-              I'm <strong>Ojo Oladimeji</strong>, a Frontend Developer based in Nigeria with 2 years of experience building fast, responsive web applications using React, TypeScript, and Next.js.
+              I'm <strong>Ojo Oladimeji</strong>, a Frontend Developer and AI-enabled software builder based in Nigeria with hands-on experience building fast, responsive web applications and AI workflows using React, TypeScript, and Next.js.
             </p>
             <p className="section-sub" style={{ marginBottom: '32px' }}>
-              I love clean UI and turning ideas into products. As a freelancer, my goal is simple: help clients ship things they're proud of — on time, with clean code they can grow with.
+              I combine clean frontend architecture with prompt engineering and LLM integrations. Whether turning complex Figma designs into responsive components or engineering robust AI prompt workflows, my focus is delivering measurable value and reliable code.
             </p>
 
             <div className="about-highlights">
@@ -61,19 +61,20 @@ export default function About() {
 {`// about.js — Ojo Oladimeji
 const developer = {
   name: "Ojo Oladimeji",
-  role: "Frontend Developer",
+  role: "Frontend Developer & AI Engineer",
   location: "Nigeria 🇳🇬",
-  experience: "2 years",
+  experience: "2+ years",
   available: true,
   loves: [
-    "Clean UI",
-    "Smooth animations",
-    "React ecosystems",
+    "Clean UI & UX",
+    "Prompt Engineering & LLMs",
+    "React & Next.js Ecosystems",
     "Turning ideas → products",
   ],
-  currentlyBuilding: [
-    "Portfolio v2 (this one!)",
-    "2 more secret projects...",
+  flagshipWork: [
+    "PromptSmith AI Studio",
+    "HireSpace Marketplace",
+    "Scissor URL Shortener",
   ],
   github: "github.com/lamhace",
   email: "Oladimejiojo93@gmail.com",

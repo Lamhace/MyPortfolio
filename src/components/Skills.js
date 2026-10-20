@@ -2,19 +2,20 @@ import React from 'react';
 import './Skills.css';
 
 const skills = [
-  { name: 'HTML & CSS', level: 92, color: '#e44d26', category: 'Core' },
-  { name: 'JavaScript', level: 85, color: '#f7df1e', category: 'Core' },
-  { name: 'React.js', level: 88, color: '#61dafb', category: 'Framework' },
-  { name: 'TypeScript', level: 72, color: '#3178c6', category: 'Language' },
-  { name: 'Tailwind CSS', level: 90, color: '#38bdf8', category: 'Styling' },
-  { name: 'Next.js', level: 75, color: '#ffffff', category: 'Framework' },
-  { name: 'Git & GitHub', level: 82, color: '#f05032', category: 'Tools' },
-  { name: 'Figma / UI', level: 70, color: '#a259ff', category: 'Design' },
+  { name: 'React.js', level: 90, color: '#61dafb', category: 'Framework' },
+  { name: 'TypeScript', level: 80, color: '#3178c6', category: 'Language' },
+  { name: 'Prompt Engineering & LLMs', level: 88, color: '#10b981', category: 'AI' },
+  { name: 'Tailwind CSS', level: 92, color: '#38bdf8', category: 'Styling' },
+  { name: 'JavaScript (ES6+)', level: 88, color: '#f7df1e', category: 'Core' },
+  { name: 'HTML & CSS', level: 94, color: '#e44d26', category: 'Core' },
+  { name: 'Next.js', level: 78, color: '#ffffff', category: 'Framework' },
+  { name: 'Git & GitHub', level: 85, color: '#f05032', category: 'Tools' },
+  { name: 'Figma / UI Design', level: 75, color: '#a259ff', category: 'Design' },
 ];
 
 const tools = [
-  'VS Code', 'Vercel', 'npm/yarn', 'Postman', 'Chrome DevTools',
-  'Netlify', 'ESLint', 'Prettier',
+  'OpenAI API', 'Google Gemini', 'LangChain', 'VS Code', 'Vercel', 
+  'npm/yarn', 'Postman', 'Chrome DevTools', 'Netlify', 'ESLint', 'Prettier',
 ];
 
 export default function Skills() {
@@ -25,7 +26,7 @@ export default function Skills() {
           <span className="section-label">Skills</span>
           <h2 className="section-title">My Tech Stack</h2>
           <p className="section-sub">
-            Tools and technologies I use to bring ideas to life.
+            Tools, technologies, and AI workflows I use to bring ideas to life.
           </p>
         </div>
 
@@ -48,20 +49,21 @@ export default function Skills() {
               </div>
               <div className="skill-bar">
                 <div
-                  className="skill-bar-fill"
-                  style={{ '--width': `${s.level}%`, '--color': s.color }}
+                  className="skill-fill"
+                  style={{ width: `${s.level}%`, background: s.color }}
                 />
               </div>
-              <span className="skill-category">{s.category}</span>
             </div>
           ))}
         </div>
 
-        <div className="tools-section reveal" style={{ transitionDelay: '0.3s' }}>
-          <p className="tools-label">Other tools I work with</p>
-          <div className="tools-list">
+        <div className="tools-wrapper reveal">
+          <h3 className="tools-title">Tools &amp; Workflow Ecosystem</h3>
+          <div className="tools-tags">
             {tools.map((t) => (
-              <span key={t} className="tool-chip">{t}</span>
+              <span className="tool-tag" key={t}>
+                {t}
+              </span>
             ))}
           </div>
         </div>
