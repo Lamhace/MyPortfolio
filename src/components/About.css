@@ -102,3 +102,41 @@
     gap: 48px;
   }
 }
+
+/* ── Mobile fixes ── */
+/* Let grid columns shrink below the code block's width so text isn't cut off on phones */
+.about-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.about-inner > * {
+  min-width: 0;
+}
+.about-card {
+  max-width: 100%;
+}
+
+/* Bigger tap target for the menu button (44px minimum) */
+.burger {
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .about-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Small labels: readable on phones */
+@media (max-width: 600px) {
+  .stat-label,
+  .skill-category,
+  .project-tag {
+    font-size: 12px;
+  }
+  .about-code {
+    font-size: 12px;
+    padding: 18px;
+  }
+}
